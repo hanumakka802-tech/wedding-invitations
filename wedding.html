@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wedding Invitation</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: #fff8e1;
+      border: 2px solid #f8b500;
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      color: #d35400;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .couple {
+      font-size: 2rem;
+      color: #e91e63;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .info p {
+      font-size: 1rem;
+      color: #444;
+      margin: 5px 0;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #f8b500;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #e59500;
+    }
+
+    #message {
+      margin-top: 20px;
+      color: #2e7d32;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #message.visible {
+      opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>You're Invited</h1>
+    <h2 class="couple">Aarav ❤️ Meera</h2>
+    <p class="details">Together with their families,<br> invite you to celebrate their wedding</p>
+
+    <div class="info">
+      <p><strong>Date:</strong> 15th December 2025</p>
+      <p><strong>Venue:</strong> The Grand Palace, Jaipur</p>
+    </div>
+
+    <button onclick="revealMessage()">Celebrate With Us 🎉</button>
+    <p id="message">We can’t wait to share this beautiful day with you!</p>
+  </div>
+
+  <script>
+    function revealMessage() {
+      const msg = document.getElementById("message");
+      msg.classList.add("visible");
+    }
+  </script>
+
+</body>
+</html>
+order-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        .rsvp-form button:hover {
+            background-color: #264653;
+        }
+
+        .final-greeting {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #e76f51;
+            font-weight: bold;
+        }
+
+        .login-container input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .login-container button {
+            padding: 12px 24px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            border: none;
+            background-color: #2a9d8f;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #264653;
+            transform: scale(1.05);
+        }
+
+        .countdown {
+            font-size: 1.5em;
+            color: #e76f51;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="your-music-file.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Login Page -->
+    <div class="login-container card">
+        <h1>Wedding Invitation</h1>
+        <p>Enter your name to proceed:</p>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button class="button" onclick="login()">Log In</button>
+    </div>
+
+    <!-- Parent Invite Page -->
+    <div class="parent-invite card">
+        <h2>Our Parents Welcome You!</h2>
+        <img src="https://via.placeholder.com/600x300?text=Parents+Photo" alt="Parents Photo">
+        <p><strong>We invite you to celebrate with us.</strong></p>
+        <button class="button" onclick="showWeddingDetails()">Proceed to Wedding Details</button>
+    </div>
+
+    <!-- Wedding Details Page -->
+    <div class="wedding-details card">
+        <h2>The Wedding of John & Emily</h2>
+        <img src="https://via.placeholder.com/600x300?text=Wedding+Couple+Photo" alt="Bride & Groom">
+        <p><strong>Date:</strong> 12th December 2025</p>
+        <p><strong>Location:</strong> Paris, France</p>
+        <p class="countdown" id="countdown"></p>
+        <button class="button" onclick="showRSVPForm()">RSVP Now</button>
+    </div>
+
+    <!-- RSVP Form Page -->
+    <div class="rsvp-form card">
+        <h2>We'd Love to Know if You Can Join Us</h2>
+        <form>
+            <label>Will you attend?</label><br>
+            <input type="radio" name="attendance" value="Yes"> Yes
+            <input type="radio" name="attendance" value="No"> No
+            <br>
+            <label>Your message to the couple:</label><br>
+            <textarea placeholder="Write a message..." id="message"></textarea><br>
+            <button class="button" type="submit" onclick="submitRSVP(event)">Submit RSVP</button>
+        </form>
+    </div>
+
+    <!-- Final Greeting -->
+    <div class="final-greeting card">
+        <h2>Thank You for Joining Us!</h2>
+        <p>We look forward to sharing this beautiful moment with all of you. Your presence is our joy!</p>
+        <button class="button" onclick="resetPage()">Back to Login</button>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            if (username.trim() === "") {
+                alert("Please enter a name to continue.");
+                return;
+            }
+            document.querySelector(".login-container").style.display = "none";
+            document.querySelector(".parent-invite").style.display = "block";
+        }
+
+        function showWeddingDetails() {
+            document.querySelector(".parent-invite").style.display = "none";
+            document.querySelector(".wedding-details").style.display = "block";
+            startCountdown();
+        }
+
+        function startCountdown() {
+            const weddingDate = new Date("Dec 12, 2025 00:00:00").getTime();
+            const countdownElement = document.getElementById("countdown");
+
+            const interval = setInterval(function() {
+                const now = new Date().getTime();
+                const timeLeft = weddingDate - now;
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                if (timeLeft < 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = "The Wedding is Here!";
+                }
+                            }, 1000);
+                        }
+                
+                        function showRSVPForm() {
+                            document.querySelector(".wedding-details").style.display = "none";
+                            document.querySelector(".rsvp-form").style.display = "block";
+                        }
+                
+                        function submitRSVP(event) {
+                            event.preventDefault();
+                            const attendance = document.querySelector('input[name="attendance"]:checked');
+                            const message = document.getElementById("message").value;
+                
+                            if (!attendance) {
+                alert("Please select your attendance status.");
+                return;
+                            }
+                
+                            alert(`Thank you for your RSVP! Your attendance: ${attendance.value} \nMessage to the couple: ${message}`);
+                            
+                            // Hide the RSVP form and show the final greeting
+                            document.querySelector(".rsvp-form").style.display = "none";
+                            document.querySelector(".final-greeting").style.display = "block";
+                        }
+                
+                        function resetPage() {
+                            document.querySelector(".final-greeting").style.display = "none";
+                            document.querySelector(".login-container").style.display = "block";
+                            document.getElementById("username").value = "";
+                        }
+                    </script>
+                
+                </body>
+                </html>
+                
